@@ -1,9 +1,9 @@
-from raytrace.src import bounds
-from raytrace.src.Vector import Vector
-from raytrace.src.Ray import Ray
-from raytrace.src.Color import Color
-from raytrace.src.Body import Body
-from raytrace.src.bodies.Plane import Plane
+import bounds
+from Vector import Vector
+from Ray import Ray
+from Color import Color
+from Body import Body
+from Plane import Plane
 
 def floor(x):
     if x < 0:

@@ -70,16 +70,15 @@ class Vector:
     def norm(self):
         """Normalize vector to length 1."""
 #        l = (self.x * self.x + self.y * self.y + self.z * self.z ) ** 0.5
-        l = (self.x * self.x + self.y * self.y + self.z * self.z ) ** -0.5
+        l = (self.x * self.x + self.y * self.y + self.z * self.z )
         if l <  bounds.very_small:
-            raise self # why did you normalize a zero vector?
-#        self.x /= l
-#        self.y /= l
-#        self.z /= l
-        self.x *= l
-        self.y *= l
-        self.z *= l
-        return self
+            raise 'Normalized a zero vector'
+        else:
+            l = l ** -0.5
+            self.x *= l
+            self.y *= l
+            self.z *= l
+            return self
     
     def cross(self, vector):
         """Returns cross product of this vector by another."""

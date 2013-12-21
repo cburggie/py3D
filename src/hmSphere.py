@@ -1,8 +1,8 @@
-from raytrace.src import bounds
-from raytrace.src.Vector import Vector
-from raytrace.src.Ray import Ray
-from raytrace.src.Color import Color
-from raytrace.src.Body import Body
+import bounds
+from Vector import Vector
+from Ray import Ray
+from Color import Color
+from Body import Body
 from Sphere import Sphere
 
 class hmSphere(Sphere):
