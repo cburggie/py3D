@@ -1,0 +1,15 @@
+
+# omit files by type
+*.pyc
+*.pdf
+*.png
+*.b
+*~
+
+# omit notes directory
+notes/
+test/samples/
+
+# omit code generating tools
+tool*.py
+
