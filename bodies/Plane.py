@@ -1,8 +1,5 @@
 import bounds
-from Vector import Vector
-from Ray import Ray
-from Color import Color
-from Body import Body
+from py3D import Vector, Ray, Color, Body
 
 class Plane(Body):
     _normal = Vector(0.0,1.0,0.0)

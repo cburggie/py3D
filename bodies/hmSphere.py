@@ -1,8 +1,5 @@
 import bounds
-from Vector import Vector
-from Ray import Ray
-from Color import Color
-from Body import Body
+from py3D import Vector, Ray, Color, Body
 from Sphere import Sphere
 
 class hmSphere(Sphere):
