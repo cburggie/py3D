@@ -2,9 +2,9 @@ import py3D
 import pytrace
 from py3D.bodies.TruncSphere import TruncSphere
 
-filename = 'mmb-rough.png'
-ppu = 100
-passes = 16
+filename = 'mmb.png'
+ppu = 50
+passes = 1
 
 V = py3D.Vector
 
@@ -44,6 +44,7 @@ plane = py3D.CheckCircle(10.0)
 
 # setup World
 world = pytrace.World([m1, m2, ball, plane], sky)
+world.set_base_brightness(0.4)
 
 # trace
 pytrace.Tracer(world, cam).draw(passes).write(filename)
