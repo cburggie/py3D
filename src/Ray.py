@@ -29,9 +29,9 @@ class Ray:
     def follow(self, d):
         # could rewrite as:
         #   return self.o.dup().add(self.d, d)
-        return Vector(self.o.x + self.d.x * d,
-                self.o.y + self.d.y * d,
-                self.o.z + self.d.z * d)
+        return Vector(self.o._x + self.d._x * d,
+                self.o._y + self.d._y * d,
+                self.o._z + self.d._z * d)
     
     def reflect(self, point, normal):
         # o = p, d = d - 2 (n dot d) n
