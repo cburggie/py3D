@@ -21,6 +21,13 @@ class Body:
         """Returns percentage of brightness due to specular reflection."""
         pass
     
+    def set_index(self, n = 1.0):
+        self._n = n
+        return self
+    
+    def get_index(self):
+        return self._n
+    
     def intersection(self, ray):
         """Returns distance at which ray intersects body."""
         pass

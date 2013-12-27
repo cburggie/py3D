@@ -17,7 +17,7 @@ class Sphere(Body):
         return self
     
     def set_radius(self, r):
-        self.radius = r
+        self.radius = abs(r)
         self.R = r ** 2.0
         return self
     
@@ -31,7 +31,7 @@ class Sphere(Body):
     
     def normal(self, point):
         """Returns normal vector of body at given point."""
-        return (point - self.center).norm()
+        return (point - self.center).scale(1/self.radius)
     
     def set_reflectivity(self, r):
         self._r = max(0.0,min(1.0,r))
