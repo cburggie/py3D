@@ -1,5 +1,7 @@
 from Vector import Vector
 
+_zero = Vector(0.0,0.0,0.0)
+
 class Ray:
     """This class handles ray manipulation."""
     o = Vector(0.0,0.0,0.0)
@@ -32,6 +34,17 @@ class Ray:
         return Vector(self.o._x + self.d._x * d,
                 self.o._y + self.d._y * d,
                 self.o._z + self.d._z * d)
+    
+    def refract(self, point, normal, sin_t):
+        if sin_t > 1.0:
+            return self.reflect(point, normal)
+        self.o = point
+        p = self.d.dup().proj(normal).add(self.d, -1.0).scale(1 - sin_t)
+        if p == _zero:
+            return self
+        else:
+            self.d = p.norm()
+            return self
     
     def reflect(self, point, normal):
         # o = p, d = d - 2 (n dot d) n
