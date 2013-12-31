@@ -36,8 +36,16 @@ class Body:
         """Returns body's index of refraction."""
         return self._n
     
+    def set_matte(self, n = 20):
+        """Sets body to matte with characteristic highlightiness n."""
+        self.is_matte = True
+        self.highlight = n
+        return self
+    
     def __init__(self):
-        self.set_transparency()
+        self.is_matte = False
+        self.highlight = 1
+        self.set_opacity()
         self.set_index()
     
     def intersection(self, ray):

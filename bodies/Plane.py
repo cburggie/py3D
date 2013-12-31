@@ -39,6 +39,7 @@ class Plane(Body):
         return self._r
     
     def __init__(self, normal, origin, color = [0.001,0.001,0.001]):
+        Body.__init__(self)
         self.set_normal(normal)
         self.set_position(origin)
         self.set_color(color)

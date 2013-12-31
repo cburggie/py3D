@@ -36,9 +36,7 @@ class hmSphere(Sphere):
             radius = 1.0,
             color = Color(),
             orientation = Vector(0.0,1.0,0.0)):
-        Sphere.set_position(self, center)
-        Sphere.set_radius(self, radius)
-        Sphere.set_color(self, color)
+        Sphere.__init__(self, center, radius, color)
         self.set_orientation(orientation)
         self.set_reflectivity(0.9,0.1)
     

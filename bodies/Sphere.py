@@ -42,6 +42,7 @@ class Sphere(Body):
         return self._r
     
     def __init__(self, center, radius, color = Color()):
+        Body.__init__(self)
         self.set_position(center)
         self.set_radius(radius)
         self.set_color(color)
