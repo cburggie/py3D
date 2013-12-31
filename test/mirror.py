@@ -3,12 +3,16 @@ import pytrace
 from py3D.bodies.TruncSphere import TruncSphere
 
 filename = 'ball-mirror.png'
+passes = 1
+ppu = 25
+
 V = py3D.Vector
 
 # setup Camera
 cam_o = V(0.0,1.0,10.0)
 cam_f = V(0.0,1.0,0.0)
 cam = pytrace.Camera(cam_o, cam_f, 4.0, 4.0)
+cam.set_ppu(ppu)
 
 
 # setup sky
@@ -26,12 +30,14 @@ mirror.set_reflectivity(0.7)
 
 # setup ball
 ball = py3D.Sphere(V(1.0,1.0,0.0), 1.0, py3D.Color(0.1,0.8,0.2))
+ball.set_matte()
 
 # setup plane
 plane = py3D.CheckPlane()
+plane.set_matte(99)
 
 # setup World
 world = pytrace.World([mirror, ball, plane], sky)
 
 # trace
-pytrace.Tracer(world, cam).draw(16).write(filename)
+pytrace.Tracer(world, cam).draw(passes).write(filename)

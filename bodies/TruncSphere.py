@@ -54,9 +54,9 @@ class TruncSphere(Sphere):
         return self
     
     def __init__(self, center, radius, color = Color()):
-        Sphere.__init__(self, center, radius, color)
         self._pp = Plane(Vector(), Vector(), Color())
         self._pn = Plane(Vector(),Vector(), Color())
+        Sphere.__init__(self, center, radius, color)
         self.set_reflectivity(0.2)
         self.set_orientation( Vector() )
         self.set_cosine(1.0)
