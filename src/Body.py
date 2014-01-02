@@ -36,15 +36,18 @@ class Body:
         """Returns body's index of refraction."""
         return self._n
     
-    def set_matte(self, n = 20):
+    def set_exp(self, n = 2.0):
+        self.exp = n
+        return self
+    
+    def set_matte(self, truth = True, n = 20.0):
         """Sets body to matte with characteristic highlightiness n."""
-        self.is_matte = True
-        self.highlight = n
+        self.is_matte = truth
+        self.set_exp(n)
         return self
     
     def __init__(self):
-        self.is_matte = False
-        self.highlight = 1
+        self.set_matte(False, 2.0)
         self.set_opacity()
         self.set_index()
     
