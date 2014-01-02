@@ -17,7 +17,7 @@ cam.set_ppu(ppu)
 
 # setup sky
 sun = V(3.0,10.0,3.0).norm()
-sky = pytrace.Sky(sun, py3D.Color(0.5,0.5,0.99))
+sky = py3D.Sky(sun, py3D.Color(0.5,0.5,0.99))
 
 # setup ball
 ball_c = V(0.0,1.0,10.0)

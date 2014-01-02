@@ -29,6 +29,6 @@ for b in bodies:
     b.set_reflectivity(0.4)
 bodies.append(center)
 
-world = pytrace.World(bodies, pytrace.Sky(V(0.0,1.0,0.0), C(0.01,0.01,0.3)) )
+world = pytrace.World(bodies, py3D.Sky(V(0.0,1.0,0.0), C(0.01,0.01,0.3)) )
 
 pytrace.Tracer(world, cam).draw(passes).write(filename)
