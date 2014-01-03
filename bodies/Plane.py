@@ -38,7 +38,7 @@ class Plane(Body):
         """Returns percentage of brightness due to specular reflection."""
         return self._r
     
-    def __init__(self, normal, origin, color = [0.001,0.001,0.001]):
+    def __init__(self, normal, origin, color = Color(0.001,0.001,0.001)):
         Body.__init__(self)
         self.set_normal(normal)
         self.set_position(origin)

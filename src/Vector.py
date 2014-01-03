@@ -70,8 +70,8 @@ class Vector:
     def norm(self):
         """Normalize vector to length 1."""
         l = (self._x * self._x + self._y * self._y + self._z * self._z )
-        if l <  bounds.very_small:
-            raise 'Normalized a zero vector'
+        if l < bounds.very_small:
+            raise self # Normalized a zero vector
         else:
             l = l ** -0.5
             self._x *= l
